@@ -6,7 +6,31 @@
  * Clase FactoryLista: sirve para crear los distintos tipos de lista (double o single linked list), según lo que pida el usuario.
  */
 
- public class FactoryLista {
+ public class FactoryLista<T> {
+
+    //atributo
+    Lista<T> lista;
+
+    
+    /** 
+     * @param tipo
+     * @return Lista
+     * método que sirve para fabricar la lista del tipo que se necesite
+     */
+    public Lista getInstanceLista(int tipo){
+        
+        switch(tipo){
+            
+            case 1: //single linked list
+                this.lista = new DoubleLinkedList();
+                break;
+              
+            case 2:
+                this.lista = new SingleLinkedList();
+                break;
+        }
+        return this.lista;
+    }
     
  }
  

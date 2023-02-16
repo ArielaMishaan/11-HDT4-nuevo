@@ -7,7 +7,7 @@
  * Clase Stack: clase abstracta, padre de las clases StackVector, StackArrayList y StackLista. 
  */
 
- public abstract class Stack implements IStack{
+ public abstract class Stack <T> implements IStack{
     
     protected int count;
 

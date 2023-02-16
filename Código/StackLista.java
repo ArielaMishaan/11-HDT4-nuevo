@@ -7,29 +7,38 @@
  * Clase StackLista: es un Stack construido en base a una lista. 
  */
 
- public class StackLista extends Stack{
+ public class StackLista<T> extends Stack{
+
+    private Lista<T> listaInterna;
+    private FactoryLista<T> fabricaLista = new FactoryLista();
+
+    //constructor
+    public StackLista(int tipo){
+        listaInterna = fabricaLista.getInstanceLista(tipo);
+    }
 
     @Override
     public int count() {
         // TODO Auto-generated method stub
-        return 0;
+        return listaInterna.Count();
     }
 
     @Override
     public boolean isEmpty() {
         // TODO Auto-generated method stub
-        return false;
+        return listaInterna.IsEmpty();
     }
 
     @Override
     public void push(Object value) {
         // TODO Auto-generated method stub
-        
+        listaInterna.InsertAtEnd(value);
     }
 
     @Override
     public Object pull() {
         // TODO Auto-generated method stub
+
         return null;
     }
 
