@@ -6,6 +6,7 @@
  * Clase TraductorPostfix: sirve para pasar las expresiones de infix a postfix y pasárselas a la clase calculadora. 
  */
 
-public class TraductorPostfix {
+ public class TraductorPostfix {
     
-}
+ }
+ 

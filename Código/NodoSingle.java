@@ -1,4 +1,5 @@
 /*
+ * Código tomado de ejemplo del paquete uvg.structures, @author MAAG
  * Ariela Mishaan (22052)
  * Algoritmos y Estructuras de Datos Sección 40
  * Hoja de Trabajo 4
@@ -6,25 +7,22 @@
  * Clase NodoSingle: es el nodo que usa la Single Linked list, con una referencia al siguiente nodo. 
  */
 
-public class NodoSingle<T> {
-
+ public class NodoSingle <T>{
+    
     //atributos
     private T valor;
     private NodoSingle<T> next;
 
     //métodos
 
-    /*
-     * Constructor del nodo doble
-     */
-    public NodoSingle(T valor) {
+    public NodoSingle(T valor){
         this.setValor(valor);
-    }    
+    }
 
     
     /** 
      * @return T
-     * método que sirve para obtener el valor del nodo
+     * método para obtener el valor del nodo
      */
     public T getValor() {
         return this.valor;
@@ -33,7 +31,7 @@ public class NodoSingle<T> {
     
     /** 
      * @param valor
-     * método que sirve para cambiar el valor del nodo
+     * método para cambiar el valor del nodo
      */
     public void setValor(T valor) {
         this.valor = valor;
@@ -41,8 +39,8 @@ public class NodoSingle<T> {
 
     
     /** 
-     * @return NodoDouble<T>
-     * método que sirve para obtener el valor del nodo siguiente.
+     * @return NodoSingle<T>
+     * método para obtener el valor del siguiente nodo
      */
     public NodoSingle<T> getNext() {
         return this.next;
@@ -51,10 +49,10 @@ public class NodoSingle<T> {
     
     /** 
      * @param next
-     * método que sirve para cambiar el valor del nodo siguiente
+     * método para cambiar el valor del siguiente nodo
      */
     public void setNext(NodoSingle<T> next) {
         this.next = next;
     }
-    
 }
+ 

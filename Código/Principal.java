@@ -6,7 +6,7 @@
  * Clase Principal: clase que interactúa con el usuario
  */
 
-public class Principal{
+ public class Principal{
     public static void main(String[] args) {
         
     }

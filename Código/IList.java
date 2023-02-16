@@ -11,7 +11,7 @@
  * Clase IList: interface para una lista. 
  */
 
-public interface IList<T> {
+ public interface IList<T> {
 
     void InsertAtStart(T value);
 

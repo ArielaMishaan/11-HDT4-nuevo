@@ -1,4 +1,5 @@
 /*
+ * Código tomado de ejemplo del paquete uvg.structures, @author MAAG
  * Ariela Mishaan (22052)
  * Algoritmos y Estructuras de Datos Sección 40
  * Hoja de Trabajo 4
@@ -6,7 +7,7 @@
  * Clase NodoDouble: es el nodo que usa la double linked list, con una referencia al objeto anterior y una al siguiente. s
  */
 
-public class NodoDouble<T>{
+ public class NodoDouble <T>{
     
     //atributos
     private T valor;
@@ -14,18 +15,16 @@ public class NodoDouble<T>{
     private NodoDouble<T> previous;
 
     //métodos
-
     /*
      * Constructor del nodo doble
      */
-    public NodoDouble(T valor) {
+    public NodoDouble(T valor){
         this.setValor(valor);
-    }    
+    }
 
-    
     /** 
      * @return T
-     * método que sirve para obtener el valor del nodo
+     * método para obtener el valor del nodo
      */
     public T getValor() {
         return this.valor;
@@ -34,7 +33,7 @@ public class NodoDouble<T>{
     
     /** 
      * @param valor
-     * método que sirve para cambiar el valor del nodo
+     * método para cambiar el valor del nodo
      */
     public void setValor(T valor) {
         this.valor = valor;
@@ -43,7 +42,7 @@ public class NodoDouble<T>{
     
     /** 
      * @return NodoDouble<T>
-     * método que sirve para obtener el valor del nodo siguiente.
+     * método para obtener el valor del siguiente nodo de la lista
      */
     public NodoDouble<T> getNext() {
         return this.next;
@@ -52,7 +51,7 @@ public class NodoDouble<T>{
     
     /** 
      * @param next
-     * método que sirve para cambiar el valor del nodo siguiente
+     * método para cambiar el siguiente nodo de la lista
      */
     public void setNext(NodoDouble<T> next) {
         this.next = next;
@@ -61,7 +60,7 @@ public class NodoDouble<T>{
     
     /** 
      * @return NodoDouble<T>
-     * método que sirve para obtener el valor del nodo anterior
+     * método para obtener el nodo anterior
      */
     public NodoDouble<T> getPrevious() {
         return this.previous;
@@ -70,11 +69,10 @@ public class NodoDouble<T>{
     
     /** 
      * @param previous
-     * método que sirve para cambiar el valor del nodo anterior
+     * método para cambiar el nodo anterior
      */
     public void setPrevious(NodoDouble<T> previous) {
         this.previous = previous;
     }
-
 
 }

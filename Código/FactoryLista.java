@@ -6,6 +6,7 @@
  * Clase FactoryLista: sirve para crear los distintos tipos de lista (double o single linked list), según lo que pida el usuario.
  */
 
-public class FactoryLista {
+ public class FactoryLista {
     
-}
+ }
+ 
