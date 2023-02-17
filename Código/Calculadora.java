@@ -71,7 +71,9 @@ import java.util.ArrayList;
                     stack.push(resultado);
                 }
                 else if(caracter.equals("-")){
-                    resultado = stack.pull() - stack.pull();
+                    int operador2 = stack.pull();
+                    int operador1 = stack.pull();
+                    resultado = operador1 - operador2;
                     stack.push(resultado);
                 }
                 else if(caracter.equals("*")){
@@ -79,7 +81,9 @@ import java.util.ArrayList;
                     stack.push(resultado);
                 }
                 else if(caracter.equals("/")){
-                    resultado = stack.pull() / stack.pull();
+                    int operador2 = stack.pull();
+                    int operador1 = stack.pull();
+                    resultado = operador1 / operador2;
                     stack.push(resultado);
                 }
             }

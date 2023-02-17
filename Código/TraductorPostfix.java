@@ -28,12 +28,11 @@ import java.util.Stack;
         
         ArrayList<String> expresionPostfix = new ArrayList<String>();
         Stack<String> listaTemporal = new Stack<String>();
-        int cantLista = listaTemporal.size();
         String ultimoCaracter = "";
 
         for (String caracter : infixExpression) {
 
-            if (cantLista != 0){
+            if (listaTemporal.size() != 0){
                 ultimoCaracter = listaTemporal.peek();
             }
 
@@ -51,23 +50,33 @@ import java.util.Stack;
 
             else if(esParentesisCerrado(caracter)){
                 
-                while((cantLista != 0) && (!listaTemporal.peek().equals("("))){
+                while((listaTemporal.size() != 0) && (!ultimoCaracter.equals("("))){
                     expresionPostfix.add(listaTemporal.pop());
+                    ultimoCaracter = listaTemporal.peek();
                 }
                 listaTemporal.pop();
             }
 
             else if(esOperador(caracter) && (nivelPrecedencia(caracter) < nivelPrecedencia(ultimoCaracter))){
-                while (cantLista != 0 && (nivelPrecedencia(caracter) < nivelPrecedencia(ultimoCaracter))) {
+                while (listaTemporal.size() != 0 && (nivelPrecedencia(caracter) < nivelPrecedencia(ultimoCaracter))) {
                     expresionPostfix.add(listaTemporal.pop());
                 }
                 listaTemporal.push(caracter);
             }
         }
 
-        for (String caracter : listaTemporal) {
+        for (int i = listaTemporal.size()-1; i >= 0; i--) {
+            expresionPostfix.add(listaTemporal.get(i));
+        } 
+
+        /*for (int i = 0; i < listaTemporal.size(); i++) {
+            int ultimo = listaTemporal.size()-1;
+            expresionPostfix.add(listaTemporal.get(ultimo));
+        }*/
+
+        /*for (String caracter : listaTemporal) {
             expresionPostfix.add(caracter);
-        }
+        }*/
 
         return expresionPostfix;
 

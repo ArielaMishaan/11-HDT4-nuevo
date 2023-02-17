@@ -29,7 +29,12 @@ public class CalculadoraTest {
         assertEquals(2, resultado);
     }
 
-    @Test
+    
+	/** 
+	 * @throws Exception
+	 * test para sumar con un stack hecho de vector
+	 */
+	@Test
 	void sumaTestVector() throws Exception{
         Calculadora calculadora = Calculadora.getInstance();
 		ArrayList<String> lista =  new ArrayList<>();
@@ -40,6 +45,10 @@ public class CalculadoraTest {
 		assertEquals(5, resultado);
 	}
 
+	/** 
+	 * @throws Exception
+	 * test para restar con un stack hecho de vector
+	 */
     @Test
 	void restaTestVector() throws Exception{
         Calculadora calculadora = Calculadora.getInstance();
@@ -51,6 +60,10 @@ public class CalculadoraTest {
 		assertEquals(-1, resultado);
 	}
 
+	/** 
+	 * @throws Exception
+	 * test para multiplicar con un stack hecho de vector
+	 */
 	@Test
 	void multiTestVector() throws Exception{
         Calculadora calculadora = Calculadora.getInstance();
@@ -86,6 +99,47 @@ public class CalculadoraTest {
 		lista.add("3");
 		int resultado = calculadora.Calculate(lista,1,0);
 		assertEquals(15, resultado);
+	}
+
+	@Test
+	void unmontonTestVector2() throws Exception{
+        Calculadora calculadora = Calculadora.getInstance();
+		ArrayList<String> lista =  new ArrayList<>();
+        lista.add("(");
+		lista.add("1");
+		lista.add("*");
+		lista.add("4");
+		lista.add(")");
+		lista.add("/");
+		lista.add("2");
+		int resultado = calculadora.Calculate(lista,1,0);
+		assertEquals(2, resultado);
+	}
+
+	@Test
+	void unmontonTestVector3() throws Exception{
+        Calculadora calculadora = Calculadora.getInstance();
+		ArrayList<String> lista =  new ArrayList<>();
+        lista.add("1");
+		lista.add("+");
+		lista.add("4");
+		lista.add("/");
+		lista.add("2");
+		int resultado = calculadora.Calculate(lista,1,0);
+		assertEquals(3, resultado);
+	}
+
+	@Test
+	void unmontonTestVector4() throws Exception{
+        Calculadora calculadora = Calculadora.getInstance();
+		ArrayList<String> lista =  new ArrayList<>();
+        lista.add("4");
+		lista.add("/");
+		lista.add("2");
+		lista.add("-");
+		lista.add("2");
+		int resultado = calculadora.Calculate(lista,1,0);
+		assertEquals(0, resultado);
 	}
 
     //Tests para el stack con arraylist
@@ -160,6 +214,46 @@ public class CalculadoraTest {
 		assertEquals(15, resultado);
 	}
 
+	@Test
+	void unmontonTestArrayList2() throws Exception{
+        Calculadora calculadora = Calculadora.getInstance();
+		ArrayList<String> lista =  new ArrayList<>();
+        lista.add("(");
+		lista.add("1");
+		lista.add("*");
+		lista.add("4");
+		lista.add(")");
+		lista.add("/");
+		lista.add("2");
+		int resultado = calculadora.Calculate(lista,2,0);
+		assertEquals(2, resultado);
+	}
+
+	@Test
+	void unmontonTestArrayList3() throws Exception{
+        Calculadora calculadora = Calculadora.getInstance();
+		ArrayList<String> lista =  new ArrayList<>();
+        lista.add("1");
+		lista.add("+");
+		lista.add("4");
+		lista.add("/");
+		lista.add("2");
+		int resultado = calculadora.Calculate(lista,2,0);
+		assertEquals(3, resultado);
+	}
+
+	@Test
+	void unmontonTestArrayList4() throws Exception{
+        Calculadora calculadora = Calculadora.getInstance();
+		ArrayList<String> lista =  new ArrayList<>();
+        lista.add("4");
+		lista.add("/");
+		lista.add("2");
+		lista.add("+");
+		lista.add("2");
+		int resultado = calculadora.Calculate(lista,2,0);
+		assertEquals(4, resultado);
+	}
     //Tests para el stack con single linked list
 
     @Test
@@ -232,6 +326,21 @@ public class CalculadoraTest {
 		assertEquals(15, resultado);
 	}
 
+	@Test
+	void unmontonTestSingleLinkedList2() throws Exception{
+        Calculadora calculadora = Calculadora.getInstance();
+		ArrayList<String> lista =  new ArrayList<>();
+        lista.add("(");
+		lista.add("1");
+		lista.add("*");
+		lista.add("4");
+		lista.add(")");
+		lista.add("/");
+		lista.add("2");
+		int resultado = calculadora.Calculate(lista,3,1);
+		assertEquals(2, resultado);
+	}
+
     //tests para el stack con double linked list
 
     @Test
@@ -302,5 +411,20 @@ public class CalculadoraTest {
 		lista.add("3");
 		int resultado = calculadora.Calculate(lista,3,2);
 		assertEquals(15, resultado);
+	}
+
+	@Test
+	void unmontonTestDoubleLinkedList2() throws Exception{
+        Calculadora calculadora = Calculadora.getInstance();
+		ArrayList<String> lista =  new ArrayList<>();
+        lista.add("(");
+		lista.add("1");
+		lista.add("*");
+		lista.add("4");
+		lista.add(")");
+		lista.add("/");
+		lista.add("2");
+		int resultado = calculadora.Calculate(lista,3,2);
+		assertEquals(2, resultado);
 	}
 }
