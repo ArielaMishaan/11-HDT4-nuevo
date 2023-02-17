@@ -61,7 +61,7 @@ import java.util.Stack;
             }
         }
 
-        for (String caracter2 : listaTemporal) {
+        for (String caracter : listaTemporal) {
             expresionPostfix.add(listaTemporal.pop());
         }
 

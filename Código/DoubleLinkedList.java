@@ -7,7 +7,7 @@
  * Clase DoubleLinkedList: es una lista de nodos con dos referencias, una al objeto anterior y uno al siguiente. 
  */
 
- public class DoubleLinkedList <T>extends Lista{
+ public class DoubleLinkedList <T>extends Lista<T>{
 
     //atributos
     private NodoDouble<T> start;
@@ -20,9 +20,9 @@
      * inserta un elemento al inicio de la lista
      */
     @Override
-    public void InsertAtStart(Object value) {
+    public void InsertAtStart(T value) {
         // TODO Auto-generated method stub
-        NodoDouble<T> newNode = new NodoDouble<T>((T) value);
+        NodoDouble<T> newNode = new NodoDouble<T>(value);
 		
 		if (IsEmpty()) {
 			start = newNode;
@@ -48,9 +48,9 @@
      * inserta un elemento al final de la lista
      */
     @Override
-    public void InsertAtEnd(Object value) {
+    public void InsertAtEnd(T value) {
         // TODO Auto-generated method stub
-        NodoDouble<T> newNode = new NodoDouble<T>((T)value);
+        NodoDouble<T> newNode = new NodoDouble<T>(value);
 		
 		if (IsEmpty()) {
 			start = newNode;
@@ -77,7 +77,7 @@
      * inserta un elemento en el índice deseado
      */
     @Override
-    public void Insert(Object value, int index) {
+    public void Insert(T value, int index) {
         // TODO Auto-generated method stub
         if (IsEmpty()){//si la lista está vacía insertar al inicio
             InsertAtStart(value);
@@ -93,7 +93,7 @@
             }
 
             else if ((index > 0) && (index < Count())){
-                NodoDouble<T> newNode = new NodoDouble<T>((T)value);
+                NodoDouble<T> newNode = new NodoDouble<T>(value);
                 NodoDouble<T> temp = start;
                 int i = 0;
 
@@ -121,7 +121,7 @@
      * elmina el elemento deseado
      */
     @Override
-    public Object Delete(int index) {
+    public T Delete(int index) {
         // TODO Auto-generated method stub
         if (index == 0){
             return DeleteAtStart();
@@ -160,7 +160,7 @@
      * elimina el primer elemento de la lista
      */
     @Override
-    public Object DeleteAtStart() {
+    public T DeleteAtStart() {
         // TODO Auto-generated method stub
         if (!IsEmpty()) {
 			
@@ -193,7 +193,7 @@
      * elimina el último elemento de la lista
      */
     @Override
-    public Object DeleteAtEnd() {
+    public T DeleteAtEnd() {
         // TODO Auto-generated method stub
         if (!IsEmpty()) {
 
@@ -234,7 +234,7 @@
      * obtiene un elemento deseado
      */
     @Override
-    public Object Get(int index) {
+    public T Get(int index) {
         // TODO Auto-generated method stub
         if (!IsEmpty()){
             

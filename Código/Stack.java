@@ -7,7 +7,7 @@
  * Clase Stack: clase abstracta, padre de las clases StackVector, StackArrayList y StackLista. 
  */
 
- public abstract class Stack <T> implements IStack{
+ public abstract class Stack <T> implements IStack<T>{
     
     protected int count;
 
@@ -24,19 +24,19 @@
     }
 
     @Override
-    public void push(Object value) {
+    public void push(T value) {
         // TODO Auto-generated method stub
         
     }
 
     @Override
-    public Object pull() {
+    public T pull() {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Object peek() {
+    public T peek() {
         // TODO Auto-generated method stub
         return null;
     }

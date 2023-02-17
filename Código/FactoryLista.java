@@ -17,16 +17,16 @@
      * @return Lista
      * método que sirve para fabricar la lista del tipo que se necesite
      */
-    public Lista getInstanceLista(int tipo){
+    public Lista<T> getInstanceLista(int tipo){
         
         switch(tipo){
             
             case 1: //single linked list
-                this.lista = new DoubleLinkedList();
+                this.lista = new DoubleLinkedList<T>();
                 break;
               
             case 2:
-                this.lista = new SingleLinkedList();
+                this.lista = new SingleLinkedList<T>();
                 break;
 
             default:

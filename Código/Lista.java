@@ -7,7 +7,7 @@
  * Clase Lista: clase abstracta, padre de la single linked list y la double linked list. 
  */
 
- public abstract class Lista<T> implements IList {
+ public abstract class Lista<T> implements IList<T> {
 
     //atributos
     protected int count;
@@ -15,37 +15,37 @@
     //métodos
 
     @Override
-    public void InsertAtStart(Object value) {
+    public void InsertAtStart(T value) {
         // TODO Auto-generated method stub
     }
     
     @Override
-    public void InsertAtEnd(Object value) {
+    public void InsertAtEnd(T value) {
         // TODO Auto-generated method stub
         
     }
     @Override
-    public void Insert(Object value, int index) {
+    public void Insert(T value, int index) {
         // TODO Auto-generated method stub
         
     }
     @Override
-    public Object Delete(int index) {
+    public T Delete(int index) {
+        // TODO Auto-gsenerated method stub
+        return null;
+    }
+    @Override
+    public T DeleteAtStart() {
         // TODO Auto-generated method stub
         return null;
     }
     @Override
-    public Object DeleteAtStart() {
+    public T DeleteAtEnd() {
         // TODO Auto-generated method stub
         return null;
     }
     @Override
-    public Object DeleteAtEnd() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-    @Override
-    public Object Get(int index) {
+    public T Get(int index) {
         // TODO Auto-generated method stub
         return null;
     }

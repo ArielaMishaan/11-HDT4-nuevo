@@ -7,7 +7,7 @@
  * Clase SingleLinkedList: lista de nodos con una referencia cada uno (al objeto siguiente)
  */
 
- public class SingleLinkedList<T> extends Lista{
+ public class SingleLinkedList<T> extends Lista<T>{
 
     //atributos
     private int count;
@@ -20,8 +20,8 @@
      * inserta el valor al inicio de la lista
      */
     @Override
-    public void InsertAtStart(Object value) {
-        NodoSingle<T> nuevoNodo = new NodoSingle<T>((T) value);
+    public void InsertAtStart(T value) {
+        NodoSingle<T> nuevoNodo = new NodoSingle<T>(value);
 
         if(IsEmpty()){
             start = nuevoNodo;
@@ -41,9 +41,9 @@
      * inserta el valor al final de la lista
      */
     @Override
-    public void InsertAtEnd(Object value) {
+    public void InsertAtEnd(T value) {
         // TODO Auto-generated method stub
-        NodoSingle<T> nuevoNodo = new NodoSingle<T>((T) value);
+        NodoSingle<T> nuevoNodo = new NodoSingle<T>(value);
 
         if(IsEmpty()){
             start = nuevoNodo;
@@ -59,7 +59,7 @@
      * inserta un valor en el índice deseado
      */
     @Override
-    public void Insert(Object valor, int index) {
+    public void Insert(T valor, int index) {
         // TODO Auto-generated method stub
         if(IsEmpty()){
             InsertAtStart(valor);
@@ -73,7 +73,7 @@
                 InsertAtStart(valor);
             }
             else if((index>0) && (index<Count())){
-                NodoSingle<T> nuevoNodo = new NodoSingle<T>((T) valor);
+                NodoSingle<T> nuevoNodo = new NodoSingle<T>(valor);
                 NodoSingle<T> pretemp = start;
                 NodoSingle<T> temp = start.getNext();
                 int i = 1;
@@ -101,7 +101,7 @@
      * elimina un valor del índice deseado
      */
     @Override
-    public Object Delete(int index) {
+    public T Delete(int index) {
         // TODO Auto-generated method stub
         if (index == 0){
             return DeleteAtStart();
@@ -140,7 +140,7 @@
      * elimina el primer valor de la lista
      */
     @Override
-    public Object DeleteAtStart() {
+    public T DeleteAtStart() {
         // TODO Auto-generated method stub
         if (!IsEmpty()) {
 
@@ -159,7 +159,7 @@
      * elimina el último valor de la lista
      */
     @Override
-    public Object DeleteAtEnd() {
+    public T DeleteAtEnd() {
         // TODO Auto-generated method stub
         if (!IsEmpty()) {
 
@@ -171,7 +171,7 @@
                 return temp.getValor();
             }
 
-            else{
+            else if(Count() > 1){
                 NodoSingle<T> pretemp = start;
                 NodoSingle<T> temp = start.getNext();
 
@@ -200,7 +200,7 @@
      * obtiene el valor del índice deseado
      */
     @Override
-    public Object Get(int index) {
+    public T Get(int index) {
         // TODO Auto-generated method stub
         if (!IsEmpty()){
 

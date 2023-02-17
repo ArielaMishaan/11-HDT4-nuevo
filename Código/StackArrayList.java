@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * Clase StackArrayList: es un Stack que funciona utilizando ArrayLists. 
  */
 
- public class StackArrayList<T> extends Stack{
+ public class StackArrayList<T> extends Stack<T>{
 
     private ArrayList<T> listaInterna;
 
@@ -45,9 +45,9 @@ import java.util.ArrayList;
      * inserta un elemento al stack
      */
     @Override
-    public void push(Object valor) {
+    public void push(T valor) {
         // TODO Auto-generated method stub
-        listaInterna.add(0,(T) valor);
+        listaInterna.add( 0,valor);
     }
 
     
@@ -56,7 +56,7 @@ import java.util.ArrayList;
      * saca el último elemento del stack
      */
     @Override
-    public Object pull() {
+    public T pull() {
         // TODO Auto-generated method stub
         return listaInterna.remove(0);
     }
@@ -67,7 +67,7 @@ import java.util.ArrayList;
      * retorna el último elemento del stack
      */
     @Override
-    public Object peek() {
+    public T peek() {
         // TODO Auto-generated method stub
         return listaInterna.get(0);
     }

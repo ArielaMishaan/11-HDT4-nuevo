@@ -7,10 +7,10 @@
  * Clase StackLista: es un Stack construido en base a una lista. 
  */
 
- public class StackLista<T> extends Stack{
+ public class StackLista<T> extends Stack<T>{
 
     private Lista<T> listaInterna;
-    private FactoryLista<T> fabricaLista = new FactoryLista();
+    private FactoryLista<T> fabricaLista = new FactoryLista<T>();
 
     //constructor
     public StackLista(int tipo){
@@ -30,23 +30,23 @@
     }
 
     @Override
-    public void push(Object value) {
+    public void push(T value) {
         // TODO Auto-generated method stub
         listaInterna.InsertAtEnd(value);
     }
 
     @Override
-    public Object pull() {
+    public T pull() {
         // TODO Auto-generated method stub
-        T objetoTemporal = (T) listaInterna.Get(listaInterna.Count());
+        T objetoTemporal = listaInterna.Get(listaInterna.Count());
         listaInterna.DeleteAtEnd();
         return objetoTemporal;
     }
 
     @Override
-    public Object peek() {
+    public T peek() {
         // TODO Auto-generated method stub
-        return listaInterna.Get(listaInterna.Count());
+        return (T) listaInterna.Get(listaInterna.Count());
     }
     
  }

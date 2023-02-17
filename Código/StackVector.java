@@ -9,7 +9,7 @@ import java.util.Vector;
  * Clase StackVector: es un Stack hecho de un vector.
  */
 
- public class StackVector<T> extends Stack{
+ public class StackVector<T> extends Stack<T>{
 
     private Vector<T> listaInterna;
 
@@ -41,9 +41,9 @@ import java.util.Vector;
      * inserta un elemento al stack
      */
     @Override
-    public void push(Object valor) {
+    public void push(T valor) {
         // TODO Auto-generated method stub
-        listaInterna.add(0, (T)valor);
+        listaInterna.add(0, valor);
     }
 
     
@@ -52,7 +52,7 @@ import java.util.Vector;
      * saca el último elemento del stack
      */
     @Override
-    public Object pull() {
+    public T pull() {
         // TODO Auto-generated method stub
         return listaInterna.remove(0);
     }
@@ -63,7 +63,7 @@ import java.util.Vector;
      * retorna el último elemento del stack
      */
     @Override
-    public Object peek() {
+    public T peek() {
         // TODO Auto-generated method stub
         return listaInterna.get(0);
     }
