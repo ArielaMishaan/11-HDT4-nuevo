@@ -9,12 +9,18 @@
  public class FactoryStack<T> {
 
     //atributo
-    Stack<T> stack;
-    FactoryLista<T> fabricaLista = new FactoryLista<T>();
+    private Stack<T> stack;
 
-    public Stack getInstanceStack(int tipo){
+    
+    /** 
+     * @param tipoStack
+     * @param tipoLista
+     * @return Stack
+     * método que sirve para fabricar el stack, implementando ya sea el vector, el array list o la lista (esta puede ser single linked list o double linked list)
+     */
+    public Stack getInstanceStack(int tipoStack, int tipoLista){
 
-        switch(tipo){
+        switch(tipoStack){
             case 1: //Stack vector
                 this.stack = new StackVector();
                 break;
@@ -24,7 +30,21 @@
                 break;
 
             case 3: //Stack lista
-                 
+                switch (tipoLista) {
+                    case 1: // single Linked list
+                        this.stack = new StackLista(tipoLista);
+                        break;
+
+                    case 2: //double linked list
+                        this.stack = new StackLista(tipoLista);
+                        break;
+                
+                    default:
+                        break;
+                }
+                break;
+            
+            default:
                 break;
         }
 

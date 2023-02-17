@@ -38,14 +38,15 @@
     @Override
     public Object pull() {
         // TODO Auto-generated method stub
-
-        return null;
+        T objetoTemporal = (T) listaInterna.Get(listaInterna.Count());
+        listaInterna.DeleteAtEnd();
+        return objetoTemporal;
     }
 
     @Override
     public Object peek() {
         // TODO Auto-generated method stub
-        return null;
+        return listaInterna.Get(listaInterna.Count());
     }
     
  }

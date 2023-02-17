@@ -9,7 +9,7 @@
  public class FactoryLista<T> {
 
     //atributo
-    Lista<T> lista;
+    private Lista<T> lista;
 
     
     /** 
@@ -27,6 +27,9 @@
               
             case 2:
                 this.lista = new SingleLinkedList();
+                break;
+
+            default:
                 break;
         }
         return this.lista;
