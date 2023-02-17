@@ -11,10 +11,9 @@
     //atributo
     private Stack<T> stack;
 
-    
     /** 
-     * @param tipoStack
-     * @param tipoLista
+     * @param tipoStack 1 = stack con vector, 2 = arraylist, 3 = lista
+     * @param tipoLista 1 = single linked list, 2 = double linked list
      * @return Stack
      * método que sirve para fabricar el stack, implementando ya sea el vector, el array list o la lista (esta puede ser single linked list o double linked list)
      */

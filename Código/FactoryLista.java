@@ -13,7 +13,7 @@
 
     
     /** 
-     * @param tipo
+     * @param tipo 1 = single linked list, 2 = double linked list
      * @return Lista
      * método que sirve para fabricar la lista del tipo que se necesite
      */
@@ -25,7 +25,7 @@
                 this.lista = new DoubleLinkedList<T>();
                 break;
               
-            case 2:
+            case 2: //Double linked list
                 this.lista = new SingleLinkedList<T>();
                 break;
 
