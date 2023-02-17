@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
  public class StackArrayList<T> extends Stack<T>{
 
-    private ArrayList<T> listaInterna;
+    private ArrayList<T> listaInterna = new ArrayList<T>();
 
     //constructor
     public StackArrayList(){

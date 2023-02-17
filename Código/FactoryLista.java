@@ -22,11 +22,11 @@
         switch(tipo){
             
             case 1: //single linked list
-                this.lista = new DoubleLinkedList<T>();
+                this.lista = new SingleLinkedList<T>();
                 break;
               
             case 2: //Double linked list
-                this.lista = new SingleLinkedList<T>();
+                this.lista = new DoubleLinkedList<T>();
                 break;
 
             default:

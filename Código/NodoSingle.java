@@ -10,13 +10,22 @@
  public class NodoSingle <T>{
     
     //atributos
-    private T valor;
+    protected T valor;
     private NodoSingle<T> next;
 
     //métodos
 
-    public NodoSingle(T valor){
+    public NodoSingle(T valor, NodoSingle<T> next){
         this.setValor(valor);
+        this.next = next;
+    }
+
+    public NodoSingle(T valor){
+        this(valor, null);
+    }
+
+    public NodoSingle(){
+        this(null, null);
     }
 
     

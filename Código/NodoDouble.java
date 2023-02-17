@@ -18,8 +18,21 @@
     /*
      * Constructor del nodo doble
      */
+    public NodoDouble(T valor, NodoDouble<T> next1, NodoDouble<T> previous1){
+        
+        this.valor = valor;
+        this.next = next1;
+
+        if(this.next != null)
+            this.next.previous = this;
+        this.previous = previous1;
+
+        if(this.previous != null)
+            this.previous.next = this;        
+    }
+
     public NodoDouble(T valor){
-        this.setValor(valor);
+        this(valor, null, null);
     }
 
     /** 

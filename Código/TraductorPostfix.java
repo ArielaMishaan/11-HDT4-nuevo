@@ -29,9 +29,13 @@ import java.util.Stack;
         ArrayList<String> expresionPostfix = new ArrayList<String>();
         Stack<String> listaTemporal = new Stack<String>();
         int cantLista = listaTemporal.size();
+        String ultimoCaracter = "";
 
         for (String caracter : infixExpression) {
-            String ultimoCaracter = listaTemporal.peek();
+
+            if (cantLista != 0){
+                ultimoCaracter = listaTemporal.peek();
+            }
 
             if(esNumerico(caracter)){
                 expresionPostfix.add(caracter);
@@ -62,7 +66,7 @@ import java.util.Stack;
         }
 
         for (String caracter : listaTemporal) {
-            expresionPostfix.add(listaTemporal.pop());
+            expresionPostfix.add(caracter);
         }
 
         return expresionPostfix;

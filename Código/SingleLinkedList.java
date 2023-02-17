@@ -13,7 +13,11 @@
     private int count;
     private NodoSingle<T> start;
     private NodoSingle<T> end;
-    
+
+    public SingleLinkedList(){
+        start = null;
+        count = 0;
+    }
     
     /** 
      * @param value
@@ -161,7 +165,25 @@
     @Override
     public T DeleteAtEnd() {
         // TODO Auto-generated method stub
-        if (!IsEmpty()) {
+
+        NodoSingle<T> finger = start;
+        NodoSingle<T> previous = null;
+
+        while(finger.getNext()!= null){
+            previous = finger;
+            finger = finger.getNext();
+        }
+        //finger es 0 o apunta la final de la lista
+        if(previous == null){
+            start = null; //tiene exactamente un elemento
+        }
+        else{
+            previous.setNext(null); //el apuntador al últimio elemento es reseteado
+        }
+        count --;
+        return finger.getValor();
+
+        /*if (!IsEmpty()) {
 
             if (Count() == 1){ 
                 NodoSingle<T> temp = start;
@@ -189,8 +211,7 @@
                 return temp.getValor();
             }
 
-        }
-        return null;
+        }*/
     }
 
     

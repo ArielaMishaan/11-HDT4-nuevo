@@ -9,8 +9,8 @@
 
  public class StackLista<T> extends Stack<T>{
 
-    private Lista<T> listaInterna;
     private FactoryLista<T> fabricaLista = new FactoryLista<T>();
+    private Lista<T> listaInterna;//cuando solo declaraba la variable en las clases stackVector y stackArrayList, no funcionaba. Tuve que crear un new Vector() y un new ArrayList. Pero aquí no puedo porque List es abstracta.
 
     //constructor
     public StackLista(int tipo){

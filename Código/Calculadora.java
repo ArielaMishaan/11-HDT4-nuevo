@@ -13,9 +13,9 @@ import java.util.ArrayList;
     private static boolean instance_flag = false;
     private static Calculadora laUnicaCalculadora;
     
-    private FactoryStack<Integer> fabricaStack;
+    private FactoryStack<Integer> fabricaStack = new FactoryStack<Integer>();
     private Stack<Integer> stack;
-    private TraductorPostfix traductor;
+    private TraductorPostfix traductor = new TraductorPostfix();
 
     //constructor
 
