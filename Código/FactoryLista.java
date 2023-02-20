@@ -35,5 +35,9 @@
         return this.lista;
     }
     
+    public Lista<T> getLista(){
+        return this.lista;
+    }
+
  }
  

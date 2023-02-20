@@ -29,18 +29,7 @@
                 break;
 
             case 3: //Stack lista
-                switch (tipoLista) {
-                    case 1: // single Linked list
-                        this.stack = new StackLista<T>(tipoLista);
-                        break;
-
-                    case 2: //double linked list
-                        this.stack = new StackLista<T>(tipoLista);
-                        break;
-                
-                    default:
-                        break;
-                }
+                this.stack = new StackLista<T>(tipoLista);
                 break;
             
             default:

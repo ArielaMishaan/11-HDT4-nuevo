@@ -94,47 +94,47 @@ import java.util.Scanner;
                                     System.out.println("Ingrese un numero valido");
                                 }
                             }
-
-                            switch (opcionLista) {
-                                case 1: //Single linked list
-                                    for (String fila : lineasDatos) {
-                                        ArrayList<String> oneLine = new ArrayList<String>();
-                                        String [] lineaSeparada = fila.split(" ");
-                                        for (String caracter : lineaSeparada) {
-                                            oneLine.add(caracter);
-                                        }
-                                        
-                                        try {
-                                            System.out.println("Resultado: " + calculadora.Calculate(oneLine, 3, 1));
-            
-            
-                                        } catch (Exception e) {
-                                            System.out.println("No se pudo realizar la operación, revise archivo de entrada");
-                                        }
+                        }
+                        
+                        switch (opcionLista) {
+                            case 1: //Single linked list
+                                for (String fila : lineasDatos) {
+                                    ArrayList<String> oneLine = new ArrayList<String>();
+                                    String [] lineaSeparada = fila.split(" ");
+                                    for (String caracter : lineaSeparada) {
+                                        oneLine.add(caracter);
                                     }
-                                    break;
+                                    
+                                    try {
+                                        System.out.println("Resultado: " + calculadora.Calculate(oneLine, 3, 1));
+        
+        
+                                    } catch (Exception e) {
+                                        System.out.println("No se pudo realizar la operación, revise archivo de entrada");
+                                    }
+                                }
+                                break;
+                        
+                            case 2: //Double Linked List
+                                for (String fila : lineasDatos) {
+                                    ArrayList<String> oneLine = new ArrayList<String>();
+                                    String [] lineaSeparada = fila.split(" ");
+                                    for (String caracter : lineaSeparada) {
+                                        oneLine.add(caracter);
+                                    }
+                                    
+                                    try {
+                                        System.out.println("Resultado: " + calculadora.Calculate(oneLine, 3, 2));
+        
+        
+                                    } catch (Exception e) {
+                                        System.out.println("No se pudo realizar la operación, revise archivo de entrada");
+                                    }
+                                }
+                                break;
                             
-                                case 2: //Double Linked List
-                                    for (String fila : lineasDatos) {
-                                        ArrayList<String> oneLine = new ArrayList<String>();
-                                        String [] lineaSeparada = fila.split(" ");
-                                        for (String caracter : lineaSeparada) {
-                                            oneLine.add(caracter);
-                                        }
-                                        
-                                        try {
-                                            System.out.println("Resultado: " + calculadora.Calculate(oneLine, 3, 2));
-            
-            
-                                        } catch (Exception e) {
-                                            System.out.println("No se pudo realizar la operación, revise archivo de entrada");
-                                        }
-                                    }
-                                    break;
-                                
-                                default:
-                                    break;
-                            }
+                            default:
+                                break;
                         }
                         break;
                     

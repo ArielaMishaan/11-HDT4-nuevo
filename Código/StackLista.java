@@ -14,7 +14,7 @@
 
     //constructor
     public StackLista(int tipo){
-        listaInterna = fabricaLista.getInstanceLista(tipo);
+        this.listaInterna = fabricaLista.getInstanceLista(tipo);
     }
 
     @Override

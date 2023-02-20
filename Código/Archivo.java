@@ -96,4 +96,5 @@ public class Archivo {
     public void eliminarArchivo(){
         archivo.delete();
     }
+
 }

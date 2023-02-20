@@ -262,9 +262,8 @@ public class CalculadoraTest {
         stack.push(4);
         stack.push(3);
         stack.push(2);
-        int resultado = 0;
-        resultado = stack.pull();
-        assertEquals(2, resultado);
+		int resultado = stack.pull();
+		assertEquals(2, resultado);
     }
 
     @Test
