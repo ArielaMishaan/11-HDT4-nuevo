@@ -15,8 +15,8 @@
     private NodoSingle<T> end;
 
     public SingleLinkedList(){
+        super();
         start = null;
-        count = 0;
     }
     
     /** 

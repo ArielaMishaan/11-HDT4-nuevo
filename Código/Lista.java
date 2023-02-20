@@ -14,6 +14,10 @@
 
     //métodos
 
+    public Lista(){
+        count = 0;
+    }
+
     @Override
     public void InsertAtStart(T value) {
         // TODO Auto-generated method stub

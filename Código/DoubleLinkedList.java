@@ -14,7 +14,12 @@
 	private NodoDouble<T> end;
 	private int count;
     
-    
+    public DoubleLinkedList(){
+        super();
+        start = null;
+        end = null;
+    }
+
     /** 
      * @param value
      * inserta un elemento al inicio de la lista

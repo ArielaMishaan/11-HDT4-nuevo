@@ -10,7 +10,7 @@
  public class StackLista<T> extends Stack<T>{
 
     private FactoryLista<T> fabricaLista = new FactoryLista<T>();
-    private Lista<T> listaInterna;//cuando solo declaraba la variable en las clases stackVector y stackArrayList, no funcionaba. Tuve que crear un new Vector() y un new ArrayList. Pero aquí no puedo porque List es abstracta.
+    private Lista<T> listaInterna;
 
     //constructor
     public StackLista(int tipo){
@@ -32,15 +32,15 @@
     @Override
     public void push(T value) {
         // TODO Auto-generated method stub
-        listaInterna.InsertAtEnd(value);
+        //listaInterna.InsertAtEnd(value);
+        listaInterna.InsertAtStart(value);
     }
 
     @Override
     public T pull() {
         // TODO Auto-generated method stub
-        T objetoTemporal = listaInterna.Get(listaInterna.Count());
-        listaInterna.DeleteAtEnd();
-        return objetoTemporal;
+        //T objetoTemporal = listaInterna.Get(0);
+        return listaInterna.DeleteAtStart();
     }
 
     @Override
